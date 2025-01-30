@@ -12,7 +12,7 @@ function vc_before_init_actions()
     }
 
     // Add this line where you include other VC modules
-    require get_template_directory() . '/visualcomposer/modules/hero-banner.php';
+   // require get_template_directory() . '/visualcomposer/modules/hero-banner.php';
 }
 
 /**

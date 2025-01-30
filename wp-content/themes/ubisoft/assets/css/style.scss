@@ -3,12 +3,8 @@
 @use "mixins" as *;
 
 // Vendor styles
-@use "vendor/simplebar";
-@use "vendor/tiny-slider"; 
-@use "vendor/daterangepicker";
-@import "vendor/base";
+@use "vendor/base";
 
 // Components
-@import "components/hero-banner";
-@import "components/poll-voting";
-// ... other component imports 
+@use "components/hero-banner";
+@use "components/poll-voting";

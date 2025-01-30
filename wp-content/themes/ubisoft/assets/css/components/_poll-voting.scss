@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
 // Poll Archive Styles
 .poll-archive-container {
     display: grid;

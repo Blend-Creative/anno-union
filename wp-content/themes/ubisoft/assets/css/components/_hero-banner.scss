@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
 // Hero Banner
 .hero-banner {
     position: relative;
@@ -75,7 +79,7 @@
         transition: $transition-base;
         
         &:hover {
-            background-color: darken($white, 6%);
+            background-color: color.adjust($white, $lightness: -6%);
             transform: translateY(-2px);
         }
     }
