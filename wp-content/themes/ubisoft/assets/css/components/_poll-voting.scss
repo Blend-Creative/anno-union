@@ -1,0 +1,309 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Poll Archive Styles
+.poll-archive-container {
+    display: grid;
+    grid-template: {
+        columns: repeat($grid-columns, minmax(0, 1fr));
+        rows: auto;
+    }
+    grid-gap: 1rem;
+    margin: 2rem auto;
+
+    .poll-card {
+        grid-column: span 4;
+        border: 1px solid $border-color;
+        padding: 15px;
+        width: 100%;
+        background-color: $background-color;
+        box-shadow: $shadow-sm;
+    }
+
+    .poll-options {
+        display: none; // Initially hidden
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .poll-image {
+        margin-bottom: 30px;
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    @media only screen and (max-width: $breakpoint-large) {
+        .poll-card {
+            grid-column: span 6;
+        }
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
+        &.poll-archive-container {
+            grid-gap: 0;
+            grid-row-gap: 1rem;
+        }
+        .poll-card {
+            grid-column: span $grid-columns;
+        }
+    }
+}
+
+// Blog Post Poll Styles
+.blog-post-poll {
+    margin-bottom: 4rem;
+
+    .poll-card {
+        display: grid;
+        grid-template-columns: repeat($grid-columns, minmax(0, 1fr));
+        grid-gap: 4rem;
+        border: 1px solid $border-color;
+        padding: 2rem;
+        width: 100%;
+        background-color: $background-color;
+        box-shadow: $shadow-sm;
+    }
+
+    .poll-content {
+        grid-column: span 6;
+    }
+
+    .poll-image {
+        grid-column: span 6;
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .poll-options {
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    @media only screen and (max-width: $breakpoint-large) {
+        .poll-card {
+            grid-gap: 2rem;
+        }
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        .poll-card {
+            grid-gap: 0;
+            grid-row-gap: 2rem;
+        }
+        .poll-content,
+        .poll-image {
+            grid-column: span $grid-columns;
+        }
+    }
+}
+
+// Poll Card Typography
+.poll-card {
+    h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 5px 0;
+        font-weight: 700;
+    }
+}
+
+// Toggle Button Styles
+.toggle-btn-container {
+    width: 100%;
+    @include flex-center;
+    margin-top: 1rem;
+}
+
+.toggle-options-btn {
+    width: 150px;
+    background: {
+        image: url("/wp-content/themes/ubisoft/images/vote-button-blank.png");
+        repeat: no-repeat;
+    }
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 62px;
+    @include flex-center;
+    color: $accent-color;
+    font: {
+        family: Albertus Nova, sans-serif;
+        weight: 700;
+    }
+
+    &:hover {
+        opacity: 0.6;
+        transition: 0.3s opacity ease;
+    }
+}
+
+// Poll Options and Progress Bar
+.poll-option {
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.vote-statistics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    background-color: $primary-color;
+    height: 100%;
+    width: 0; // Updated dynamically via JavaScript
+    transition: width 1s ease-in-out;
+}
+
+// Vote Buttons
+.vote-btn,
+.submit-multiple-btn {
+    @include button-base;
+    margin-top: 20px;
+
+    &:hover {
+        opacity: 0.6;
+        transition: 0.3s opacity ease;
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+
+    &.loading {
+        pointer-events: none;
+        color: transparent; // Hide the button text
+
+        &::after {
+            content: '';
+            border: 2px solid transparent;
+            border-top: 2px solid $white;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 0.8s linear infinite;
+            position: absolute;
+        }
+    }
+}
+
+// Login Button
+.login-btn-container {
+    width: 100%;
+    @include flex-center;
+    margin: 2rem 0;
+}
+
+.login-vote-btn {
+    @include button-base;
+
+    &:hover {
+        color: $white;
+        opacity: 0.6;
+        transition: 0.3s opacity ease;
+    }
+}
+
+a.login-vote-btn {
+    &:hover {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+// Messages
+.poll-closed-message {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.poll-none-message {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+// Checkbox Styles
+.poll-options label {
+    margin-top: 20px;
+}
+
+input[type="checkbox"] {
+    $checkbox-size: 1.2em;
+    $border-width: 0.15em;
+
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: $white;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    border: $border-width solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    outline-offset: 2px;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        width: $checkbox-size;
+        height: $checkbox-size;
+        border-radius: 50%;
+        transform: scale(0);
+        transform-origin: center center;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em $accent-color;
+        background-color: CanvasText;
+    }
+
+    &:checked::before {
+        transform: scale(1);
+    }
+
+    &:focus {
+        outline-offset: 2px;
+    }
+
+    &:disabled {
+        --form-control-color: $white;
+        color: $white;
+        cursor: not-allowed;
+    }
+}
+
+// Animation
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

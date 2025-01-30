@@ -1,0 +1,63 @@
+// Colors
+$white: white;
+$black: #000;
+$primary-color: #5f032e;
+$accent-color: #d4b89b;
+$border-color: #ddd;
+$background-color: #f9f9f9;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+// Grid
+$grid-columns: 12;
+$container-max-width: 1200px;
+$content-max-width: 600px;
+$content-side-margin: 10%;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+
+// Typography
+$font-family-base: sans-serif;
+$font-family-heading: 'Albertus Nova', sans-serif;
+$font-size-base: 18px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 48px;
+
+// Breakpoints
+$breakpoint-small: 767px;
+$breakpoint-medium: 890px;
+$breakpoint-large: 990px;
+$breakpoint-xlarge: 1200px;
+
+// Border Radius
+$border-radius-sm: 3px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-slow: all 0.5s ease;
+$transition-fast: all 0.2s ease;
+
+// Z-index
+$z-index-below: -1;
+$z-index-base: 1;
+$z-index-above: 2;
+$z-index-modal: 1000;
+$z-index-overlay: 2000;
+
+// Common Gradients
+$gradient-overlay: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%); 
+
+// Hero Banner
+$hero-min-height: 600px;

@@ -10,6 +10,9 @@ function vc_before_init_actions()
     foreach (glob(get_template_directory() . '/visualcomposer/modules/*.php') as $file) {
         require_once($file);
     }
+
+    // Add this line where you include other VC modules
+   // require get_template_directory() . '/visualcomposer/modules/hero-banner.php';
 }
 
 /**

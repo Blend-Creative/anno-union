@@ -1,1 +1,86 @@
- 
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Hero Banner
+.hero-banner {
+    position: relative;
+    min-height: $spacing-xl * 10;
+    background: {
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+    }
+    display: flex;
+    align-items: center;
+    padding: $spacing-xl 0;
+    
+    // Video background
+    .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: $z-index-base;
+    }
+    
+    // Gradient overlay
+    &.has-gradient {
+        &:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: $gradient-overlay;
+            z-index: $z-index-above;
+        }
+    }
+    
+    // Content container
+    .hero-content {
+        position: relative;
+        z-index: $z-index-above;
+        max-width: $content-max-width;
+        margin: 0 auto;
+        padding: 0 $spacing-md;
+        
+        .hero-banner:not(.content-center) & {
+            margin: 0 0 0 $content-side-margin;
+        }
+    }
+    
+    // Typography
+    .hero-heading {
+        color: $white;
+        margin-bottom: $spacing-md;
+        font: {
+            size: $font-size-xxl;
+        }
+        line-height: 1.2;
+    }
+    
+    .hero-description {
+        color: $white;
+        margin-bottom: $spacing-lg;
+        font: {
+            size: $font-size-lg;
+        }
+        line-height: 1.6;
+    }
+    
+    // Button
+    .hero-button {
+        display: inline-block;
+        padding: $spacing-sm $spacing-lg;
+        background-color: $white;
+        color: $black;
+        text-decoration: none;
+        border-radius: $border-radius-md;
+        transition: $transition-base;
+        
+        &:hover {
+            background-color: color.adjust($white, $lightness: -6%);
+            transform: translateY(-2px);
+        }
+    }
+} 
