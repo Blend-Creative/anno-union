@@ -1,0 +1,25 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass wp-content/themes/ubisoft/assets/css/style.scss wp-content/themes/ubisoft/assets/style.css --style compressed --watch",
+    "sass:build": "sass wp-content/themes/ubisoft/assets/css/style.scss wp-content/themes/ubisoft/assets/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blend-Creative/anno-union.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blend-Creative/anno-union/issues"
+  },
+  "homepage": "https://github.com/Blend-Creative/anno-union#readme",
+  "devDependencies": {
+    "sass": "^1.83.4"
+  }
+}

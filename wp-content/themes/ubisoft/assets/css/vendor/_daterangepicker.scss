@@ -1,0 +1,30 @@
+.daterangepicker {
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    color: inherit;
+    display: none;
+    font: {
+        family: arial;
+        size: 15px;
+    }
+    left: 20px;
+    line-height: 1em;
+    margin-top: 7px;
+    max-width: none;
+    padding: 0;
+    position: absolute;
+    top: 100px;
+    width: 278px;
+    z-index: $z-index-modal;
+    
+    &:before,
+    &:after {
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        content: "";
+        display: inline-block;
+        position: absolute;
+    }
+    
+    // ... continue converting the rest of daterangepicker styles
+} 

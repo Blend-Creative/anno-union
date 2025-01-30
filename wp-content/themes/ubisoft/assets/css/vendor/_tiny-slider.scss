@@ -1,0 +1,22 @@
+.tns-outer {
+    padding: 0 !important;
+    
+    [hidden] {
+        display: none !important;
+    }
+    
+    [aria-controls], 
+    [data-action] {
+        cursor: pointer;
+    }
+}
+
+.tns-slider {
+    transition: all 0s;
+    
+    > .tns-item {
+        box-sizing: border-box;
+    }
+}
+
+// ... continue converting the rest of tiny-slider styles 

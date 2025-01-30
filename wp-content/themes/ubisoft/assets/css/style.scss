@@ -1,0 +1,14 @@
+// Variables and Mixins
+@use "variables" as *;
+@use "mixins" as *;
+
+// Vendor styles
+@use "vendor/simplebar";
+@use "vendor/tiny-slider"; 
+@use "vendor/daterangepicker";
+@import "vendor/base";
+
+// Components
+@import "components/hero-banner";
+@import "components/poll-voting";
+// ... other component imports 
