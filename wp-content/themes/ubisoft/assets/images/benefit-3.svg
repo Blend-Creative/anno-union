@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20.4605091,12.0933818 C13.8295273,17.1080727 8.34443636,13.1106909 7.16916364,12.1230545 L7.16916364,8.29352727 L11.8365091,10.1367273 L10.0194909,10.8529455 L11.9956364,11.6343273 L13.8144,10.9175273 L13.8149818,10.9178182 L20.4605091,8.29352727 L20.4605091,12.0933818 Z M13.8149818,1.5712 L23.6695273,5.46269091 L13.8149818,9.35418182 L3.96043636,5.46269091 L13.8149818,1.5712 Z M27.6296727,5.46269091 L13.8149818,0.00756363636 L0,5.46269091 L5.71461818,7.71927273 L5.71461818,12.7610182 L5.9392,12.976 C5.98661818,13.0213818 9.18167273,16.0005818 13.8158545,16 C16.1344,15.9997091 18.8142545,15.2538182 21.6389818,13.0208 L21.9153455,12.8026182 L21.9153455,7.71927273 L23.3664,7.14618182 L23.3664,12.0715636 C23.3664,12.4733091 23.6919273,12.7988364 24.0936727,12.7988364 C24.4954182,12.7988364 24.8209455,12.4733091 24.8209455,12.0715636 L24.8209455,6.57192727 L27.6296727,5.46269091 L27.6296727,5.46269091 Z" id="path-1"></path>
+        <rect id="path-3" x="0" y="0" width="48" height="48"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/Academy">
+            <g id="Group-2">
+                <g id="color/light-grey" fill="#F5F5F5">
+                    <rect id="Rectangle" x="0" y="0" width="48" height="48"></rect>
+                </g>
+                <g id="Group" transform="translate(10.000000, 16.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Fill-1" fill="#000000" xlink:href="#path-1"></use>
+                    <g id="color/berlin" mask="url(#mask-2)">
+                        <g transform="translate(-10.000000, -16.000000)">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="Rectangle-Copy" stroke="none" fill="#FFA400" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

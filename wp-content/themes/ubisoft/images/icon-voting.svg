@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/Event</title>
+    <defs>
+        <path d="M24,7 C33.3888407,7 41,14.6111593 41,24 C41,33.3888407 33.3888407,41 24,41 C14.6111593,41 7,33.3888407 7,24 C7,14.6111593 14.6111593,7 24,7 Z M24,9 C15.7157288,9 9,15.7157288 9,24 C9,32.2842712 15.7157288,39 24,39 C32.2842712,39 39,32.2842712 39,24 C39,15.7157288 32.2842712,9 24,9 Z M29.2381061,18.4871025 C29.8903006,17.8163914 30.9240307,17.841482 31.5471905,18.5428486 C32.1705316,19.2443129 32.1474852,20.3566975 31.4954722,21.0274086 L31.4954722,21.0274086 L23.2475887,29.5128314 C22.9315629,29.8380335 22.5251663,30 22.1190418,30 C21.7005775,30 21.2826577,29.8280754 20.9640913,29.4853 L20.9640913,29.4853 L16.4783939,24.6587185 C15.8405354,23.9724844 15.8405354,22.8598069 16.4783939,22.1735728 C17.1161618,21.4873387 18.1502548,21.4873387 18.7880227,22.1735728 L18.7880227,22.1735728 L22.1444472,25.7849664 Z" id="path-1"></path>
+        <rect id="path-3" x="0" y="0" width="48" height="48"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop/Teaser/Event" transform="translate(-167.000000, -183.000000)">
+            <g id="Desktop/Teaser/Image">
+                <g id="icon/Vote" transform="translate(160.000000, 176.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#1A1A1A" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="color/white" mask="url(#mask-2)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Rectangle-Copy" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

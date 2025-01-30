@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/search</title>
+    <defs>
+        <path d="M19.7198912,18.30893 L14.3360862,12.9251249 C16.931301,9.58484322 16.4820855,4.80241457 13.3102449,2.00383475 C10.1384043,-0.794745074 5.33726504,-0.64481181 2.34622662,2.34622662 C-0.64481181,5.33726504 -0.794745074,10.1384043 2.00383475,13.3102449 C4.80241457,16.4820855 9.58484322,16.931301 12.9251249,14.3360862 L18.30893,19.7198912 C18.7004656,20.098049 19.3228312,20.0926408 19.707736,19.707736 C20.0926408,19.3228312 20.098049,18.7004656 19.7198912,18.30893 Z M2.05094431,8.03805006 C2.05094431,4.73146286 4.73146286,2.05094431 8.03805006,2.05094431 C11.3446373,2.05094431 14.0251558,4.73146286 14.0251558,8.03805006 C14.0251558,11.3446373 11.3446373,14.0251558 8.03805006,14.0251558 C4.73296746,14.0215262 2.05457391,11.3431327 2.05094431,8.03805006 Z" id="path-1"></path>
+        <rect id="path-3" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="UBI19_INT01_ReDesign_Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UBI19_INT01_ReDesign_Desktop_2-6-1" transform="translate(-954.000000, -30.000000)">
+            <g id="Nav">
+                <g id="icon/search" transform="translate(952.000000, 28.000000)">
+                    <g id="Group" transform="translate(2.000000, 2.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g id="color/black" mask="url(#mask-2)">
+                            <g transform="translate(-2.000000, -2.000000)">
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <use id="Rectangle-Copy" stroke="none" fill="#000000" fill-rule="evenodd" xlink:href="#path-3"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

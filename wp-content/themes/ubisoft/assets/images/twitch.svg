@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <polygon id="path-1" points="0.0003 0.0004 24 0.0004 24 24 0.0003 24"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <g id="twitter">
+                <g id="Group-3">
+                    <g id="Fill-1-Clipped">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <path d="M20.4843,0.0004 L3.5153,0.0004 C1.5773,0.0004 0.0003,1.5774 0.0003,3.5164 L0.0003,20.4844 C0.0003,22.4234 1.5773,24.0004 3.5153,24.0004 L20.4843,24.0004 C22.4223,24.0004 24.0003,22.4234 24.0003,20.4844 L24.0003,3.5164 C24.0003,1.5774 22.4223,0.0004 20.4843,0.0004" id="Fill-1" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+            <g id="iconfinder_twitch_1608704" transform="translate(4.000000, 4.000000)" fill="#000000" fill-rule="nonzero">
+                <path d="M8,4.17307692 L8,8.34615385 L6.54271357,8.34615385 L6.54271357,4.17307692 L8,4.17307692 Z M12,4.17307692 L12,8.34615385 L10.5427136,8.34615385 L10.5427136,4.17307692 L12,4.17307692 Z M12,11.4807692 L14.5427136,9.03846154 L14.5427136,1.39423077 L2.54271357,1.39423077 L2.54271357,11.4807692 L5.81909548,11.4807692 L5.81909548,13.5673077 L8,11.4807692 L12,11.4807692 Z M16,0 L16,9.74038462 L11.638191,13.9134615 L8.36180905,13.9134615 L6.18090452,16 L4,16 L4,13.9134615 L0,13.9134615 L0,2.77884615 L1.09547739,0 L16,0 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
