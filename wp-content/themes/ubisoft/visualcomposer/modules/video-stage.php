@@ -60,11 +60,11 @@ class ubisoft_video_stage extends WPBakeryShortCode
                         'heading' => _x('Headline Image', 'visualcomposer'),
                         'param_name' => 'headline_image',
                     ),
-                    array(
-                        'type' => 'attach_image',
-                        'heading' => _x('Button Image', 'visualcomposer'),
-                        'param_name' => 'button_image',
-                    ),
+                    // array(
+                    //     'type' => 'attach_image',
+                    //     'heading' => _x('Button Image', 'visualcomposer'),
+                    //     'param_name' => 'button_image',
+                    // ),
                     array(
                         'type' => 'dropdown',
                         'heading' => _x('Video', 'visualcomposer'),
@@ -120,9 +120,11 @@ class ubisoft_video_stage extends WPBakeryShortCode
         if ($video) {
             $modalId = 'modal-' . wp_rand();
             $embed = get_field('embed', $video);
+            console_log($embed);
             if (!empty($embed) && !empty($button_image)) {
-                $button = '<a href="' . get_permalink($video) . '" data-toggle="modal" data-target="#' . $modalId . '" data-video-modal-button>' . $button_image . '</a>';
+                $button = '<a class="video-stage__button" href="' . get_permalink($video) . '" data-toggle="modal" data-target="#' . $modalId . '" data-video-modal-button>' . '<i class="fa-sharp fa-regular fa-circle-play"></i>Watch trailer' . '</a>';
 
+   
                 $modal = '<div class="modal fade" id="' . $modalId . '" tabindex="-1" aria-hidden="true" data-video-modal>
                   <div class="modal-dialog modal-dialog-centered modal-xl modal-video">
                     <div class="modal-content">

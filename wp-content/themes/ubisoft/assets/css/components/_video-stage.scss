@@ -1,0 +1,72 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.video-stage {
+
+    &__content {
+
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-sm $spacing-md;
+        background-color: $secondary-color;
+        color: $off-white;
+        text-decoration: none;
+        position: relative;
+        transition: $transition-base;
+        text-transform: uppercase;
+        font: {
+            size: $font-size-base;
+            family: $font-family-heading;
+        }
+        border: none;
+        border-radius: 0;
+        width: fit-content;
+        
+        /* Left SVG Decorative Edge */
+        &::before {
+            $encoded-color: str-replace(inspect($secondary-color), '#', '%23');
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 90%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="88.978" height="337" viewBox="0 0 88.978 337"><path d="M0,0H50.52V337H0s-38.458-92.695-38.458-176.945S0,0,0,0Z" transform="translate(38.458)" fill="#{$encoded-color}"/></svg>') no-repeat center / contain;
+        }
+
+        &::after {
+            $encoded-color: str-replace(inspect($secondary-color), '#', '%23');
+            content: '';
+            position: absolute;
+            right: -48px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 90px;
+            height: 90%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="88.978" height="337" viewBox="0 0 88.978 337"><path d="M12.062,0h-50.52V337h50.52S50.52,244.305,50.52,160.055,12.062,0,12.062,0Z" transform="translate(38.458)" fill="#{$encoded-color}"/></svg>') no-repeat center / contain;
+        }
+
+        svg {
+            margin-right: $spacing-xs;
+            font: {
+                size: $font-size-lg;
+            }
+        }
+    
+        &:hover {
+            color: $off-white;
+            text-decoration: none;
+            opacity: 0.8;
+            transform: translateY(-5px);
+            transition: $transition-base;
+        }
+
+    }
+
+}

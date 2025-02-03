@@ -5,7 +5,7 @@
 // Hero Banner
 .hero-banner {
     position: relative;
-    min-height: $spacing-xl * 10;
+    min-height: $hero-min-height;
     background: {
         position: center;
         size: cover;
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     padding: $spacing-xl 0;
-    
+
     // Video background
     .hero-video {
         position: absolute;
@@ -35,52 +35,149 @@
             z-index: $z-index-above;
         }
     }
-    
-    // Content container
-    .hero-content {
-        position: relative;
-        z-index: $z-index-above;
-        max-width: $content-max-width;
-        margin: 0 auto;
-        padding: 0 $spacing-md;
-        
-        .hero-banner:not(.content-center) & {
-            margin: 0 0 0 $content-side-margin;
+
+    .container {
+        display: flex;
+        align-items: center;
+
+        &.content-center {
+            justify-content: center;
+
+            .hero-content {
+                text-align: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
         }
+    
+        &.content-left {
+            justify-content: flex-start;
+
+            .hero-button {
+                margin-left: 10px;
+            }
+
+            @media only screen and (max-width: $breakpoint-small) {
+                .hero-content {
+                    text-align: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+
+                    .hero-button {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    
+        &.content-right {
+            justify-content: flex-end;
+
+            .hero-button {
+                margin-left: 10px;
+            }
+
+            @media only screen and (max-width: $breakpoint-small) {
+                .hero-content {
+                    text-align: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+
+                    .hero-button {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        // Content container
+        .hero-content {
+            z-index: $z-index-above;
+            max-width: $content-max-width;
+            //margin: 0 auto;
+            //padding: 0 $spacing-md;
+
+             // Typography
+            .hero-heading {
+                color: $off-white;
+                margin-bottom: $spacing-md;
+                font: {
+                    size: $font-size-xxl;
+                    family: $font-family-heading;
+                }
+                line-height: 1.2;
+            }
+            
+            .hero-description {
+                color: $off-white;
+                margin-bottom: $spacing-lg;
+                font: {
+                    size: $font-size-md;
+                }
+                line-height: 1.6;
+            }
+            
+            // Button
+            .hero-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: $spacing-sm $spacing-md;
+                background-color: $off-white;
+                color: $black;
+                text-decoration: none;
+                position: relative;
+                transition: $transition-base;
+                text-transform: uppercase;
+                font: {
+                    size: $font-size-base;
+                    family: $font-family-heading;
+                }
+                border: none;
+                border-radius: 0;
+                width: fit-content;
+                
+                /* Left SVG Decorative Edge */
+                &::before {
+                    $encoded-color: str-replace(inspect($off-white), '#', '%23');
+                    content: '';
+                    position: absolute;
+                    left: -48px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 90px;
+                    height: 90%;
+                    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="88.978" height="337" viewBox="0 0 88.978 337"><path d="M0,0H50.52V337H0s-38.458-92.695-38.458-176.945S0,0,0,0Z" transform="translate(38.458)" fill="#{$encoded-color}"/></svg>') no-repeat center / contain;
+                }
+
+                &::after {
+                    $encoded-color: str-replace(inspect($off-white), '#', '%23');
+                    content: '';
+                    position: absolute;
+                    right: -48px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 90px;
+                    height: 90%;
+                    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="88.978" height="337" viewBox="0 0 88.978 337"><path d="M12.062,0h-50.52V337h50.52S50.52,244.305,50.52,160.055,12.062,0,12.062,0Z" transform="translate(38.458)" fill="#{$encoded-color}"/></svg>') no-repeat center / contain;
+                }
+            
+                &:hover {
+                    opacity: 0.8;
+                    transform: translateY(-5px);
+                    transition: $transition-base;
+                }
+            }
+
+        }
+
+
+       
     }
     
-    // Typography
-    .hero-heading {
-        color: $white;
-        margin-bottom: $spacing-md;
-        font: {
-            size: $font-size-xxl;
-        }
-        line-height: 1.2;
-    }
+
     
-    .hero-description {
-        color: $white;
-        margin-bottom: $spacing-lg;
-        font: {
-            size: $font-size-lg;
-        }
-        line-height: 1.6;
-    }
-    
-    // Button
-    .hero-button {
-        display: inline-block;
-        padding: $spacing-sm $spacing-lg;
-        background-color: $white;
-        color: $black;
-        text-decoration: none;
-        border-radius: $border-radius-md;
-        transition: $transition-base;
-        
-        &:hover {
-            background-color: color.adjust($white, $lightness: -6%);
-            transform: translateY(-2px);
-        }
-    }
 } 

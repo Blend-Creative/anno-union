@@ -1,10 +1,29 @@
+// Base font size (usually browser default is 16px)
+$base-font: 16;
+
+// Function to convert px to rem
+@function rem($pixels) {
+    @return #{$pixels / $base-font}rem;
+}
+
+// Scale calculation using rem
+$scale: clamp(1rem, calc(2vh + 2vw), 4rem);
+
+
 // Colors
 $white: white;
+$off-white: #EACDAE;
+$off-white-dark: #d4b89b;
 $black: #000;
 $primary-color: #5f032e;
+$secondary-color: #19010c;
 $accent-color: #d4b89b;
 $border-color: #ddd;
 $background-color: #f9f9f9;
+$dark-blue: #040C28;
+$light-blue: #1B3851;
+$dark-brown: #2C1810;
+$light-brown: #8B4513;
 
 // Shadows
 $shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -18,20 +37,24 @@ $content-max-width: 600px;
 $content-side-margin: 10%;
 
 // Spacing
-$spacing-xs: 0.5rem;
-$spacing-sm: 1rem;
-$spacing-md: 2rem;
-$spacing-lg: 4rem;
-$spacing-xl: 6rem;
+$spacing-xs: rem(8);   
+$spacing-sm: rem(16); 
+$spacing-md: rem(32); 
+$spacing-lg: clamp(#{rem(32)}, #{$scale}, #{rem(64)}); 
+$spacing-xl: clamp(#{rem(64)}, #{$scale}, #{rem(96)});  
 
 // Typography
 $font-family-base: sans-serif;
 $font-family-heading: 'Albertus Nova', sans-serif;
-$font-size-base: 18px;
-$font-size-sm: 14px;
-$font-size-lg: 18px;
-$font-size-xl: 24px;
-$font-size-xxl: 48px;
+
+// Font sizes using clamp and rem
+$font-size-base: rem(16);  
+$font-size-sm: rem(14);   
+$font-size-md: clamp(#{rem(14)}, #{$scale}, #{rem(18)});   
+$font-size-ml: clamp(#{rem(18)}, #{$scale}, #{rem(24)}); 
+$font-size-lg: clamp(#{rem(24)}, #{$scale}, #{rem(28)}); 
+$font-size-xl: clamp(#{rem(32)}, #{$scale}, #{rem(40)});  
+$font-size-xxl: clamp(#{rem(40)}, #{$scale}, #{rem(56)}); 
 
 // Breakpoints
 $breakpoint-small: 767px;
@@ -45,9 +68,9 @@ $border-radius-md: 4px;
 $border-radius-lg: 8px;
 
 // Transitions
-$transition-base: all 0.3s ease;
-$transition-slow: all 0.5s ease;
-$transition-fast: all 0.2s ease;
+$transition-base: all 0.3s ease-in-out;
+$transition-slow: all 0.5s ease-in-out;
+$transition-fast: all 0.2s ease-in-out;
 
 // Z-index
 $z-index-below: -1;
@@ -57,7 +80,9 @@ $z-index-modal: 1000;
 $z-index-overlay: 2000;
 
 // Common Gradients
-$gradient-overlay: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%); 
+$gradient-overlay: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%); 
 
 // Hero Banner
-$hero-min-height: 600px;
+$hero-min-height: clamp(#{rem(96)}, calc(50vh + 10vw), #{rem(800)});
+
+

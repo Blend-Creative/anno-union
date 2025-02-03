@@ -1,0 +1,58 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Base image styles
+.simple-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    // Image alignment classes
+    &.left {
+        margin-right: auto;
+    }
+
+    &.center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    &.right {
+        margin-left: auto;
+    }
+
+    // Caption styles
+    .image-caption {
+        margin: 0.5rem;
+        font-size: $font-size-sm;
+        color: $black;
+        font-style: italic;
+        line-height: 1.2;
+        max-width: 80%;
+        background: $white;
+        padding: 1rem;
+        border-radius: $border-radius-sm;
+    }
+}
+
+
+// Responsive adjustments
+// @media only screen and (max-width: $breakpoint-medium) {
+//     .simple-image {
+//         &.left,
+//         &.right {
+//             float: none;
+//             margin: $spacing-md auto;
+//         }
+//     }
+// } 

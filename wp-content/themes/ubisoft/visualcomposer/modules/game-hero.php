@@ -139,7 +139,7 @@ class ubisoft_game_hero extends WPBakeryShortCode
 
         return '
             <div class="game-hero game-hero--' . $style . ' ' . $background_color . '">
-                <div class="container">
+                <div class="container-fluid no-padding">
                     <div class="game-hero__wrapper">
                         <div class="game-hero__content">
                             ' . $logo_image . '

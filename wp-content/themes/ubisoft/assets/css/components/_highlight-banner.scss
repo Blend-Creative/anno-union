@@ -1,0 +1,68 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.highlight-banner {
+    position: relative;
+    padding: $spacing-xl 0;
+    overflow: hidden;
+    
+    // Background colors
+    &.dark-blue {
+        background-color: $dark-blue;
+        color: $off-white-dark;
+    }
+    
+    &.light-blue {
+        background-color: $light-blue;
+        color: $off-white-dark;
+    }
+    
+    &.dark-brown {
+        background-color: $secondary-color;
+        color: $off-white-dark;
+    }
+    
+    &.light-brown {
+        background-color: $primary-color;
+        color: $off-white-dark;
+    }
+    
+    // Pattern overlay
+    .highlight-pattern {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url('/wp-content/themes/ubisoft/assets/images/feature-shapes.svg') no-repeat center center;
+        background-size: cover;
+        z-index: $z-index-base;
+    }
+    
+    // Content
+    .container {
+        position: relative;
+        z-index: $z-index-above;
+    }
+    
+    .highlight-content {
+        max-width: $content-max-width;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .highlight-heading {
+        font: {
+            family: $font-family-heading;
+            size: $font-size-xxl;
+        }
+        margin-bottom: $spacing-md;
+        text-transform: uppercase;
+    }
+    
+    .highlight-text {
+        font-size: $font-size-md;
+        line-height: 1.6;
+    }
+} 

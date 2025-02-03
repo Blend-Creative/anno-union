@@ -77,10 +77,21 @@ class ubisoft_image extends WPBakeryShortCode
     public function element_frontend($atts, $content = null)
     {
         $image = empty($atts['image_id']) ? '' : wp_get_attachment_image($atts['image_id'], 'xxl');
+        $caption = empty($atts['image_id']) ? '' : wp_get_attachment_caption($atts['image_id']);
+        
+        if (!isset($atts['alignment'])) {
+            $atts['alignment'] = 'left';
+        }
 
-        if (!isset($atts['alignment'])) { $atts['alignment'] = 'left'; }
+        $caption_html = '';
+        if (!empty($caption)) {
+            $caption_html = '<div class="image-caption">' . wp_kses_post($caption) . '</div>';
+        }
 
-        return '<div class="simple-image ' . $atts['alignment'] . '">' . $image . '</div>';
+        return '<div class="simple-image ' . $atts['alignment'] . '">' . 
+               $image . 
+               $caption_html . 
+               '</div>';
     }
 }
 

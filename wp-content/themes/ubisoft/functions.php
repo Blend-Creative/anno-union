@@ -684,3 +684,14 @@ function console_log($output, $with_script_tags = true) {
     }
     echo $js_code;
 } 
+
+function blend_script_enqueuer() {
+	if ( ! is_admin() ) {
+
+        // FontAwesome
+        wp_register_script( 'blend_font_awesome', 'https://kit.fontawesome.com/25514dd693.js', array( 'jquery' ), null, true );
+        wp_enqueue_script( 'blend_font_awesome' );
+		
+	};
+}
+add_action( 'wp_enqueue_scripts', 'blend_script_enqueuer' );

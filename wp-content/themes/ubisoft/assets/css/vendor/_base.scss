@@ -1140,6 +1140,9 @@ template {
 	padding-right: 15px;
 	width: 100%
 }
+.no-padding {
+	padding: 0 !important;
+}
 
 @media (min-width:576px) {
 
