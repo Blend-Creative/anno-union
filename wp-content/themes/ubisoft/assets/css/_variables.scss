@@ -1,14 +1,21 @@
-// Base font size (usually browser default is 16px)
+// Typography
 $base-font: 16;
+$font-family-base: sans-serif;
+$font-family-heading: 'Albertus Nova', sans-serif;
 
 // Function to convert px to rem
 @function rem($pixels) {
     @return #{$pixels / $base-font}rem;
 }
 
-// Scale calculation using rem
-$scale: clamp(1rem, calc(2vh + 2vw), 4rem);
-
+// Font sizes using clamp and rem
+$font-size-base: rem(16);  
+$font-size-sm: rem(14);   
+$font-size-md: clamp(0.9375rem, 0.8rem + 0.7vw, 1.125rem);   // 15px to 18px
+$font-size-ml: clamp(1.125rem, 1rem + 1vw, 1.5rem);          // 18px to 24px
+$font-size-lg: clamp(1.5rem, 1.3rem + 1.2vw, 1.75rem);       // 24px to 28px
+$font-size-xl: clamp(2rem, 1.6rem + 1vw, 2.5rem);          // 32px to 40px
+$font-size-xxl: clamp(2rem, 1.1rem + 2.2vw, 3.5rem);           // 32px to 56px
 
 // Colors
 $white: white;
@@ -40,21 +47,12 @@ $content-side-margin: 10%;
 $spacing-xs: rem(8);   
 $spacing-sm: rem(16); 
 $spacing-md: rem(32); 
-$spacing-lg: clamp(#{rem(32)}, #{$scale}, #{rem(64)}); 
-$spacing-xl: clamp(#{rem(64)}, #{$scale}, #{rem(96)});  
+$spacing-lg: clamp(2rem, 1.8rem + 2vw, 4rem); 
+$spacing-xl: clamp(3rem, 3rem + 2vw, 6rem); 
 
-// Typography
-$font-family-base: sans-serif;
-$font-family-heading: 'Albertus Nova', sans-serif;
-
-// Font sizes using clamp and rem
-$font-size-base: rem(16);  
-$font-size-sm: rem(14);   
-$font-size-md: clamp(#{rem(14)}, #{$scale}, #{rem(18)});   
-$font-size-ml: clamp(#{rem(18)}, #{$scale}, #{rem(24)}); 
-$font-size-lg: clamp(#{rem(24)}, #{$scale}, #{rem(28)}); 
-$font-size-xl: clamp(#{rem(32)}, #{$scale}, #{rem(40)});  
-$font-size-xxl: clamp(#{rem(40)}, #{$scale}, #{rem(56)}); 
+// Button Padding
+$button-padding-sm: clamp(0.7rem, 0.5rem + 0.8vw, 1rem) clamp(1.5rem, 1.2rem + 1vw, 2rem);
+$button-padding-md: clamp(1rem, 0.8rem + 1vw, 1.5rem) clamp(2rem, 1.6rem + 1.5vw, 3rem);
 
 // Breakpoints
 $breakpoint-small: 767px;
@@ -84,5 +82,14 @@ $gradient-overlay: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0
 
 // Hero Banner
 $hero-min-height: clamp(#{rem(96)}, calc(50vh + 10vw), #{rem(800)});
+
+// iFrame
+$iframe-aspect-ratios: (
+    "16:9": calc(9 / 16 * 100%),
+    "4:3": calc(3 / 4 * 100%),
+    "1:1": 100%
+);
+$iframe-max-width: 100%;
+$iframe-border-radius: $border-radius-md;
 
 

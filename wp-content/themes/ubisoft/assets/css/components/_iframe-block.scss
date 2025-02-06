@@ -1,0 +1,60 @@
+@import '../variables';
+
+.iframe-block {
+    margin: 0 auto;
+    
+    // Margin utilities
+    &.margin-top-md {
+        margin-top: $spacing-md;
+    }
+    
+    &.margin-top-lg {
+        margin-top: $spacing-lg;
+    }
+    
+    &.margin-top-xl {
+        margin-top: $spacing-xl;
+    }
+    
+    &.margin-bottom-md {
+        margin-bottom: $spacing-md;
+    }
+    
+    &.margin-bottom-lg {
+        margin-bottom: $spacing-lg;
+    }
+    
+    &.margin-bottom-xl {
+        margin-bottom: $spacing-xl;
+    }
+    
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        background: $black;
+        border-radius: $iframe-border-radius;
+        overflow: hidden;
+
+        // Apply aspect ratios
+        &.aspect-ratio-16-9 {
+            padding-bottom: map-get($iframe-aspect-ratios, "16:9");
+        }
+        
+        &.aspect-ratio-4-3 {
+            padding-bottom: map-get($iframe-aspect-ratios, "4:3");
+        }
+        
+        &.aspect-ratio-1-1 {
+            padding-bottom: map-get($iframe-aspect-ratios, "1:1");
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+} 

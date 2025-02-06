@@ -57,12 +57,18 @@
             family: $font-family-heading;
             size: $font-size-xxl;
         }
-        margin-bottom: $spacing-md;
+        margin-bottom: $spacing-sm;
         text-transform: uppercase;
     }
     
     .highlight-text {
         font-size: $font-size-md;
         line-height: 1.6;
+
+        p {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 } 

@@ -12,7 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: $spacing-sm $spacing-md;
+        padding: $button-padding-sm;
         background-color: $secondary-color;
         color: $off-white;
         text-decoration: none;
@@ -22,10 +22,12 @@
         font: {
             size: $font-size-base;
             family: $font-family-heading;
+            weight: 600;
         }
         border: none;
         border-radius: 0;
         width: fit-content;
+        max-width: 100%;
         
         /* Left SVG Decorative Edge */
         &::before {

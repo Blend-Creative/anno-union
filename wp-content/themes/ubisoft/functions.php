@@ -673,6 +673,33 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 
 
 // =================================================================================
+// FontAwesome
+// =================================================================================
+
+function blend_script_enqueuer() {
+	if ( ! is_admin() ) {
+        wp_register_script( 'blend_font_awesome', 'https://kit.fontawesome.com/25514dd693.js', array( 'jquery' ), null, true );
+        wp_enqueue_script( 'blend_font_awesome' );
+	};
+}
+add_action( 'wp_enqueue_scripts', 'blend_script_enqueuer' );
+
+
+// =================================================================================
+// Content Security Headers
+// =================================================================================
+
+function add_embed_csp_headers() {
+
+    $domain = str_replace(['http://', 'https://'], '', $_SERVER['HTTP_HOST']);
+    header("Content-Security-Policy: frame-ancestors 'self' https://*.twitch.tv https://player.twitch.tv https://embed.twitch.tv https://clips.twitch.tv https://*.youtube.com https://*.vimeo.com;");
+    header("Access-Control-Allow-Origin: https://player.twitch.tv");
+}
+add_action('send_headers', 'add_embed_csp_headers');
+
+
+
+// =================================================================================
 // DEV Console
 // =================================================================================
 
@@ -685,13 +712,4 @@ function console_log($output, $with_script_tags = true) {
     echo $js_code;
 } 
 
-function blend_script_enqueuer() {
-	if ( ! is_admin() ) {
 
-        // FontAwesome
-        wp_register_script( 'blend_font_awesome', 'https://kit.fontawesome.com/25514dd693.js', array( 'jquery' ), null, true );
-        wp_enqueue_script( 'blend_font_awesome' );
-		
-	};
-}
-add_action( 'wp_enqueue_scripts', 'blend_script_enqueuer' );

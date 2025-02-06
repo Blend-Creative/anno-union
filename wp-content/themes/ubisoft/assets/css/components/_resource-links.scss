@@ -9,7 +9,7 @@
             family: $font-family-heading;
             size: $font-size-xl;
         }
-        margin-top: $spacing-lg;
+        //margin-top: $spacing-lg;
         margin-bottom: $spacing-sm;
         text-transform: uppercase;
         color: $primary-color;
@@ -59,7 +59,7 @@
         }
 
         .resource-content {
-            padding: $spacing-lg $spacing-lg $spacing-md $spacing-lg;
+            padding: $spacing-lg;
             text-align: center;
 
             .resource-title {

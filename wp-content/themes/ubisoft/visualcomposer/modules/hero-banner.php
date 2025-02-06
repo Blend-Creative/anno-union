@@ -145,21 +145,15 @@ class ubisoft_hero_banner extends WPBakeryShortCode
     {
         $atts = vc_map_get_attributes('ubisoft_hero_banner', $atts);
         
-        // Get background
-        $background = '';
-        if ($atts['background_type'] === 'image' && !empty($atts['background_image'])) {
-            $image_url = wp_get_attachment_image_url($atts['background_image'], 'full');
-            $background = 'style="background-image: url(' . esc_url($image_url) . ')"';
-        }
-
-        // Parse button
-        $button = vc_build_link($atts['button']);
-        
         // Build classes
         $classes = array('hero-banner');
         $alignment = [];
         if ($atts['enable_gradient'] === 'yes') {
             $classes[] = 'has-gradient';
+        }
+        // Add has-video class when video background is selected
+        if ($atts['background_type'] === 'video') {
+            $classes[] = 'has-video';
         }
         if ($atts['content_align'] === 'center') {
             $alignment[] = 'content-center';
@@ -171,19 +165,30 @@ class ubisoft_hero_banner extends WPBakeryShortCode
             $alignment[] = 'content-right';
         }
         
+        // Get background for image type
+        $background = '';
+        if ($atts['background_type'] === 'image' && !empty($atts['background_image'])) {
+            $image_url = wp_get_attachment_image_url($atts['background_image'], 'full');
+            $background = 'style="background-image: url(' . esc_url($image_url) . ')"';
+        }
+
+        // Parse button
+        $button = vc_build_link($atts['button']);
+        
         // Start output
         ob_start();
         ?>
         <div class="<?php echo esc_attr(implode(' ', $classes)); ?>" <?php echo $background; ?>>
             <?php if ($atts['background_type'] === 'video' && !empty($atts['background_video'])) : ?>
-                <video class="hero-video" autoplay muted loop playsinline>
-                    <source src="<?php echo esc_url(wp_get_attachment_url($atts['background_video'])); ?>" type="video/mp4">
-                </video>
+                <div class="video-wrapper">
+                    <video class="hero-video" autoplay muted loop playsinline>
+                        <source src="<?php echo esc_url(wp_get_attachment_url($atts['background_video'])); ?>" type="video/mp4">
+                    </video>
+                </div>
             <?php endif; ?>
 
             <?php if ($atts['enable_content_container'] === 'yes') : ?>
                 <div class="container <?php echo esc_attr(implode(' ', $alignment)); ?>">
-
                     <div class="hero-content">
                         <?php if (!empty($atts['heading'])) : ?>
                             <h1 class="hero-heading"><?php echo esc_html($atts['heading']); ?></h1>
@@ -202,7 +207,6 @@ class ubisoft_hero_banner extends WPBakeryShortCode
                             </a>
                         <?php endif; ?>
                     </div>
-
                 </div>
             <?php endif; ?>
         </div>
